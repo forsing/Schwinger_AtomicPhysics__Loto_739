@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
+
 """Schwinger V4 atomic physics: spektralni Greenov odziv i celi prelazi."""
+
 import argparse
 import csv
 from pathlib import Path
@@ -9,9 +11,9 @@ from scipy.spatial import cKDTree
 
 
 DEFAULTS = (
-    "/Users/4c/Desktop/GHQ/data/loto7_4698_k80.csv",
-    "/Users/4c/Desktop/GHQ/data/loto7_4698_k80_loto_2971.csv",
-    "/Users/4c/Desktop/GHQ/data/loto7_4698_k80_loto_plus_1727.csv",
+    "/data/loto7_4698_k80.csv",
+    "/data/loto7_4698_k80_loto_2971.csv",
+    "/data/loto7_4698_k80_loto_plus_1727.csv",
 )
 
 WINDOW, STARTS = 96, 12
@@ -562,7 +564,7 @@ if __name__ == "__main__":
 
 
 """
-Ulaz: /Users/4c/Desktop/GHQ/data/loto7_4698_k80.csv; redova=4698
+Ulaz: /data/loto7_4698_k80.csv; redova=4698
 Validacija: 16/48
 Validacija: 32/48
 Validacija: 48/48
@@ -575,7 +577,7 @@ Test: redovi 4635..4698
 SCHWINGER V4 ATOMIC PHYSICS: prosek=1.3750; pogodaka 0..7=[10, 28, 19, 6, 1, 0, 0, 0]
 Kontrola: prethodno izvuceno kolo: prosek=1.2188; pogodaka 0..7=[13, 30, 16, 4, 1, 0, 0, 0]
 Poslednji red: 4,12,18,28,35,36,37
-SLEDECI RED 4699: 1,2,3,4,6,12,13
+SLEDECI RED 4699: 1,x,3,y,6,z,13
 Skor=1.3998196131; iteracija=23; vec postoji u istoriji=False
 Strukturni nivoi: 0.694339,0.788451,0.998846,1.401454,1.635821,1.798513,1.993091
 Empirijska podrska: L1 poluprecnik=2.800000; kvantil=.75
@@ -584,7 +586,7 @@ Greenov odziv je strukturna analogija; skor nije verovatnoca dobitka.
 
 
 
-Ulaz: /Users/4c/Desktop/GHQ/data/loto7_4698_k80_loto_2971.csv; redova=2971
+Ulaz: /data/loto7_4698_k80_loto_2971.csv; redova=2971
 Validacija: 16/48
 Validacija: 32/48
 Validacija: 48/48
@@ -597,7 +599,7 @@ Test: redovi 2908..2971
 SCHWINGER V4 ATOMIC PHYSICS: prosek=1.4375; pogodaka 0..7=[14, 21, 18, 9, 2, 0, 0, 0]
 Kontrola: prethodno izvuceno kolo: prosek=1.2969; pogodaka 0..7=[11, 30, 16, 7, 0, 0, 0, 0]
 Poslednji red: 18,20,21,24,29,34,38
-SLEDECI RED 2972: 1,20,21,24,25,26,28
+SLEDECI RED 2972: 1,x,21,y,25,z,28
 Skor=3.8596894338; iteracija=6; vec postoji u istoriji=False
 Strukturni nivoi: 0.663610,0.884473,1.116648,1.209249,1.279519,1.874628,2.326925
 Empirijska podrska: L1 poluprecnik=2.800000; kvantil=.75
@@ -606,7 +608,7 @@ Greenov odziv je strukturna analogija; skor nije verovatnoca dobitka.
 
 
 
-Ulaz: /Users/4c/Desktop/GHQ/data/loto7_4698_k80_loto_plus_1727.csv; redova=1727
+Ulaz: /data/loto7_4698_k80_loto_plus_1727.csv; redova=1727
 Validacija: 16/48
 Validacija: 32/48
 Validacija: 48/48
@@ -619,7 +621,7 @@ Test: redovi 1664..1727
 SCHWINGER V4 ATOMIC PHYSICS: prosek=1.4062; pogodaka 0..7=[12, 23, 21, 7, 1, 0, 0, 0]
 Kontrola: prethodno izvuceno kolo: prosek=1.2969; pogodaka 0..7=[15, 23, 18, 8, 0, 0, 0, 0]
 Poslednji red: 4,12,18,28,35,36,37
-SLEDECI RED 1728: 1,2,3,4,5,16,26
+SLEDECI RED 1728: 1,x,3,y,5,z,26
 Skor=2.6432798208; iteracija=18; vec postoji u istoriji=False
 Strukturni nivoi: 0.858255,1.021211,1.204309,1.519663,1.828091,1.879642,2.131716
 Empirijska podrska: L1 poluprecnik=3.200000; kvantil=.75
@@ -631,9 +633,9 @@ Greenov odziv je strukturna analogija; skor nije verovatnoca dobitka.
 
 """
 CSV	        Sledeća kombinacija	Prosek pogodaka na 64 kola	Kontrola: prethodno izvučeno kolo
-Objedinjeni	1,2,3,4,6,12,13	    1,3750	                1,2188
-Loto	    1,20,21,24,25,26,28	1,4375	                1,2969
-Loto Plus	1,2,3,4,5,16,26	    1,4062	                1,2969
+Objedinjeni	1,x,3,y,6,z,13	    1,3750	                1,2188
+Loto	    1,x,21,y,25,z,28	1,4375	                1,2969
+Loto Plus	1,x,3,y,5,z,26	    1,4062	                1,2969
 """
 
 
